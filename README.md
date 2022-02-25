@@ -1,12 +1,17 @@
-# my-slider
+# Slider settings
 
-## Slider settings
+container: 'slider',  
 
-container: 'slider',
 nextArrow: '.slider-next',
+
 prevArrow: '.slider-prev',
+
 slide: '.slide',
+
 totalCounter: '.total',
+
 currentCounter: '.current',
+
 wrapper: 'slider-wrapper',
-field: '.slider-inner',
+
+field: '.slider-inner'
