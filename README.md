@@ -2,16 +2,16 @@
 
 container: 'slider',  
 
-nextArrow: '.slider-next',
+nextArrow: 'slider-next',
 
-prevArrow: '.slider-prev',
+prevArrow: 'slider-prev',
 
-slide: '.slide',
+slide: 'slide',
 
-totalCounter: '.total',
+totalCounter: 'total',
 
-currentCounter: '.current',
+currentCounter: 'current',
 
 wrapper: 'slider-wrapper',
 
-field: '.slider-inner'
+field: 'slider-inner'
