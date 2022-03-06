@@ -7,18 +7,18 @@ slider > wrapper > inner > slide
 
 
 ### JS
-container: 'slider',  
+**container:** 'slider',  
 
-field: 'slider-inner'
+**field:** 'slider-inner'
 
-wrapper: 'slider-wrapper',
+**wrapper:** 'slider-wrapper',
 
-slide: 'slide',
+**slide:** 'slide',
 
-nextArrow: 'slider-next',
+**nextArrow:** 'slider-next',
 
-prevArrow: 'slider-prev',
+**prevArrow:** 'slider-prev',
 
-totalCounter: 'total',
+**totalCounter:** 'total',
 
-currentCounter: 'current'
+**currentCounter:** 'current'
