@@ -13,13 +13,13 @@
 .slider-prevBtn {
     position: absolute;
     top: 40%;
-    left: 18%;
+    left: 10%;
     padding: 100px 25px;
 }
 
 .slider-nextBtn {
     position: absolute;
     top: 40%;
-    right: 18%;
+    right: 10%;
     padding: 100px 25px;
 }
