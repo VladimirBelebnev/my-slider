@@ -2,6 +2,8 @@
 
 This is a very easy to use slider that has a number of settings and additions. You only need to maintain a few values and follow the HTML structure. Happy using!
 
+Example: https://vladimirbelebnev.github.io/my-slider/
+
 ### HTML structure
 
     <div class="slider">
