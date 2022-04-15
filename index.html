@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Slider</title>
+</head>
+<body>
+    <div class="slider">
+        <div class="slider__counter">
+            <span id="current"></span>
+            /
+            <span id="total"></span>
+        </div>
+        <div class="slider__slide-wrapper">
+            <div class="slider__slide-field">
+                <div class="slider__slide">
+                    <img src="https://look.com.ua/pic/201501/1920x1080/look.com.ua-114800.jpg" alt="1">
+                </div>
+                <div class="slider__slide">
+                    <img src="https://look.com.ua/pic/201501/1920x1080/look.com.ua-114800.jpg" alt="1">
+                </div>
+                <div class="slider__slide">
+                    <img src="https://look.com.ua/pic/201501/1920x1080/look.com.ua-114800.jpg" alt="1">
+                </div>
+                <div class="slider__slide">
+                    <img src="https://look.com.ua/pic/201501/1920x1080/look.com.ua-114800.jpg" alt="1">
+                </div>
+                <div class="slider__slide">
+                    <img src="https://look.com.ua/pic/201501/1920x1080/look.com.ua-114800.jpg" alt="1">
+                </div>
+            </div>
+        </div>
+        <button class="slider-prevBtn">-</button>
+        <button class="slider-nextBtn">+</button>
+    </div>
+    <script src="/script.js"></script>
+    <script>
+        slider({
+                container: '.slider',
+                slide: '.slider__slide',
+                wrapper: '.slider__slide-wrapper',
+                field: '.slider__slide-field',
+                nextArrow: '.slider-nextBtn',
+                prevArrow: '.slider-prevBtn',
+                slidePlusInterval: true,
+                delayInterval: 10000,
+                indicatorsSlide: true,
+                totalCounter: '#total',
+                currentCounter: '#current',
+            });
+    </script>
+</body>
+</html>

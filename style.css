@@ -1,0 +1,25 @@
+.slider {
+    margin-top: 25px;
+    text-align: center;
+}
+.slider__slide img {
+    max-width: 1000px;
+}
+
+.slider__slide-wrapper {
+    margin-top: 25px;
+}
+
+.slider-prevBtn {
+    position: absolute;
+    top: 40%;
+    left: 18%;
+    padding: 100px 25px;
+}
+
+.slider-nextBtn {
+    position: absolute;
+    top: 40%;
+    right: 18%;
+    padding: 100px 25px;
+}
