@@ -1,15 +1,15 @@
 import slider from '/';
 
 slider({
-    container: '.offer__slider',
-    nextArrow: '.offer__slider-next',
-    prevArrow: '.offer__slider-prev',
-    slide: '.offer__slide',
-    wrapper: '.offer__slider-wrapper',
-    field: '.offer__slider-inner',
+    container: '.slider',
+    nextArrow: '.slider-nextBtn',
+    prevArrow: '.slider-prevBtn',
+    slide: '.slider__slide',
+    wrapper: '.slider__slide-wrapper',
+    field: '.slider__slide-field',
     slidePlusInterval: true,
-    delayInterval: 3000,
+    delayInterval: 10000,
+    indicatorsSlide: true,
     totalCounter: '#total',
     currentCounter: '#current',
-    indicatorsSlide: true,
 });
