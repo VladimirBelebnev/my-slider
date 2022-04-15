@@ -1,4 +1,4 @@
-const slider = ({ container, slide, wrapper, field, nextArrow, prevArrow, slidePlusInterval = false, delayInterval = 5000, totalCounter, currentCounter, indicatorsSlide = false}) => {
+const slider = ({ container, slide, wrapper, field, nextArrow, prevArrow, slidePlusInterval = false, delayInterval = 10000, totalCounter, currentCounter, indicatorsSlide = false}) => {
     const slides = document.querySelectorAll(slide),
         slider = document.querySelector(container),
         prev = document.querySelector(prevArrow),
