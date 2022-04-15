@@ -1,4 +1,4 @@
-# Slider settings
+# Slider settings ↔️ 
 
 This is a very easy to use slider that has a number of settings and additions. You only need to maintain a few values and follow the HTML structure. Happy using!
 
@@ -30,11 +30,11 @@ This is a very easy to use slider that has a number of settings and additions. Y
         <button class="slider-nextBtn">
     </div>
     
-Ideal structure of the HTML code (class names can be changed). Note that you can choose not to use the number of slides in total and the current slide (just leave it out in your HTML structure).
+❗Ideal structure of the HTML code (class names can be changed). Note that you can choose not to use the number of slides in total and the current slide (just leave it out in your HTML structure).
 
 ### JS settings
 
-These settings are suitable for the example given above in the HTTL structure. The name of the classes can be changed, but the structure must be respected.
+⚡ These settings are suitable for the example given above in the HTTL structure. The name of the classes can be changed, but the structure must be respected.
 
     slider({
         container: '.slider',
