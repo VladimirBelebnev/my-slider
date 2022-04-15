@@ -1,5 +1,4 @@
-function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentCounter, wrapper, field }) {
-
+const slider = ({ container, slide, wrapper, field, nextArrow, prevArrow, slidePlusInterval = false, delayInterval = 5000, totalCounter, currentCounter, indicatorsSlide = false}) => {
     const slides = document.querySelectorAll(slide),
         slider = document.querySelector(container),
         prev = document.querySelector(prevArrow),
@@ -9,15 +8,19 @@ function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentC
         slidesWrapper = document.querySelector(wrapper),
         slidesField = document.querySelector(field),
         width = window.getComputedStyle(slidesWrapper).width;
-    let slideIndex = 1;
-    let offset = 0;
+    
+    let slideIndex = 1,
+        offset = 0,
+        paused = false;
 
-    if (slides.length < 10) {
-        total.textContent = `0${slides.length}`;
-        current.textContent = `0${slideIndex}`;
-    } else {
-        total.textContent = slides.length;
-        current.textContent = slideIndex;
+    if (totalCounter && currentCounter) {
+        if (slides.length < 10) {
+            total.textContent = `0${slides.length}`;
+            current.textContent = `0${slideIndex}`;
+        } else {
+            total.textContent = slides.length;
+            current.textContent = slideIndex;
+        }
     }
 
     slidesField.style.width = 100 * slides.length + '%';
@@ -26,24 +29,25 @@ function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentC
 
     slidesWrapper.style.overflow = 'hidden';
 
-
     slides.forEach(slide => {
         slide.style.width = width;
     });
 
-    function showCurrent() {
-        if (slides.length < 10) {
-            current.textContent = `0${slideIndex}`;
-        } else {
-            current.textContent = slideIndex;
+    const showCurrent = () => {
+        if (totalCounter && currentCounter) {
+            if (slides.length < 10) {
+                current.textContent = `0${slideIndex}`;
+            } else {
+                current.textContent = slideIndex;
+            }
         }
-    }
+    };
 
-    function deleteNotDigits(str) {
+    const deleteNotDigits = (str) => {
         return +str.replace(/\D/g, '');
-    }
+    };
 
-    next.addEventListener('click', () => {
+    const plusSlide = () => {
         if (offset == deleteNotDigits(width) * (slides.length - 1)) {
             offset = 0;
         } else {
@@ -58,11 +62,10 @@ function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentC
         }
 
         showCurrent();
-
         activeDot();
-    });
+    };
 
-    prev.addEventListener('click', () => {
+    const minusSlide = () => {
         if (offset == 0) {
             offset = deleteNotDigits(width) * (slides.length - 1);
         } else {
@@ -77,10 +80,35 @@ function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentC
         }
 
         showCurrent();
-
         activeDot();
+    };
+
+    next.addEventListener('click', () => {
+        plusSlide();
     });
-    // Точки для слайдера
+
+    prev.addEventListener('click', () => {
+        minusSlide();
+    });
+
+    if (slidePlusInterval) {
+        const activeSlideInterval = () => {
+            paused = setInterval(() => {
+                plusSlide();
+            }, delayInterval);
+        };
+
+        activeSlideInterval();
+
+        slider.addEventListener('mouseenter', () => {
+            clearInterval(paused);
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            activeSlideInterval();
+        });
+    }
+
     slider.style.position = 'relative';
 
     const indicators = document.createElement('ol'),
@@ -98,7 +126,10 @@ function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentC
         margin-left: 15%;
         list-style: none;
     `;
-    slider.append(indicators);
+
+    if (indicatorsSlide) {
+        slider.append(indicators);
+    }
 
     for (let i = 0; i < slides.length; i++) {
         const dot = document.createElement('li');
@@ -126,10 +157,10 @@ function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentC
         dots.push(dot);
     }
 
-    function activeDot() {
+    const activeDot = () => {
         dots.forEach(dot => dot.style.opacity = '.5');
         dots[slideIndex - 1].style.opacity = 1;
-    }
+    };
 
     dots.forEach(dot => {
         dot.addEventListener('click', (event) => {
@@ -141,10 +172,9 @@ function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentC
             slidesField.style.transform = `translateX(-${offset}px)`;
 
             showCurrent();
-
             activeDot();
         });
     });
-}
+};
 
 export default slider;
