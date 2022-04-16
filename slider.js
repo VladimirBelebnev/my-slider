@@ -83,13 +83,17 @@ const slider = ({ container, slide, wrapper, field, nextArrow, prevArrow, slideP
         activeDot();
     };
 
-    next.addEventListener('click', () => {
-        plusSlide();
-    });
+    if (nextArrow) {
+        next.addEventListener('click', () => {
+            plusSlide();
+        });
+    }
 
-    prev.addEventListener('click', () => {
-        minusSlide();
-    });
+    if (prevArrow) {
+        prev.addEventListener('click', () => {
+            minusSlide();
+        });
+    }
 
     if (slidePlusInterval) {
         const activeSlideInterval = () => {
