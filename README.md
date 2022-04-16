@@ -32,7 +32,7 @@ Example: https://vladimirbelebnev.github.io/my-slider/
         <button class="slider-nextBtn">
     </div>
     
-❗Ideal structure of the HTML code (class names can be changed). Note that you can choose not to use the number of slides in total and the current slide (just leave it out in your HTML structure).
+❗Ideal structure of the HTML code (class names can be changed). Note that you can choose not to use the number of slides in total and the current slide (just leave it out in your HTML structure). Switching buttons are also an optional attribute, but then you must enable the automatic slide switching setting.
 
 ### JS settings
 
@@ -56,8 +56,8 @@ Example: https://vladimirbelebnev.github.io/my-slider/
 2. **slide** is the slide class.
 3. **wrapper** is a slide wrapper.
 4. **field** is an important class wrapping all slides.
-5. **nextArrow** is a button, after clicking on which the slide will switch to one forward.
-6. **prevArrow** is a button, after clicking on which the slide will slide will switch one back.
+5. **nextArrow** is a button, after clicking on which the slide will switch to one forward (if not, then just don't touch it.) (***optional setting***).
+6. **prevArrow** is a button, after clicking on which the slide will slide will switch one back (if not, then just don't touch it.) (***optional setting***).
 7. **slidePlusInterval** if you want the slides to switch automatically, you need to move the setting to true (if not, then just don't touch it.) (***optional setting***).
 8. **delayInterval** this setting allows you to choose the time after which the slides will switch automatically (note that the time must be recorded in milliseconds) (if not, then just don't touch it.) (***optional setting***).
 9. **indicatorsSlides** this setting allows you to display the total number of slides and the specific active slide. There is a transition by clicking on them. (if not, then just don't touch it.) (***optional setting***).
